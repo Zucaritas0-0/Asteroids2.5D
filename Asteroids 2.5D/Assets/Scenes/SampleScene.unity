@@ -448,6 +448,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4725802069528569914, guid: c39462e5082d2a146907f03a35d685e7, type: 3}
+      propertyPath: maxmoveSDP
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7096176713209509275, guid: c39462e5082d2a146907f03a35d685e7, type: 3}
       propertyPath: m_Name
       value: ship
