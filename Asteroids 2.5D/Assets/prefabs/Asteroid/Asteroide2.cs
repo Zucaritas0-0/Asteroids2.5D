@@ -17,8 +17,8 @@ void Start()
 
 {
     randomRotation.x = Random.Range(-rotationOffset, rotationOffset);
-    randomRotation.y = Random.Range(-rotationOffset, rotationOffset);
-    randomRotation.z = Random.Range(-rotationOffset, rotationOffset);
+   // randomRotation.y = Random.Range(-rotationOffset, rotationOffset);
+   // randomRotation.z = Random.Range(-rotationOffset, rotationOffset);
 }
 
 void FixedUpdate()
