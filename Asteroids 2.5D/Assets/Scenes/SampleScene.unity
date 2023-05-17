@@ -281,6 +281,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3850919777321157745, guid: c39462e5082d2a146907f03a35d685e7, type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3850919777321157745, guid: c39462e5082d2a146907f03a35d685e7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4725802069528569914, guid: c39462e5082d2a146907f03a35d685e7, type: 3}
       propertyPath: maxmoveSDP
       value: 10
@@ -352,7 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 684304709458170849, guid: 5c0a02499c40269469bb3a2e8252c791, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 4.11
       objectReference: {fileID: 0}
     - target: {fileID: 684304709458170849, guid: 5c0a02499c40269469bb3a2e8252c791, type: 3}
       propertyPath: m_LocalPosition.y

@@ -112,19 +112,29 @@ public class PYRControll : MonoBehaviour
                 {
 
                     //   Debug.Log("going to :" + direction);
-                    accel++;
+                    accel+=100f;
+                    Debug.Log("accel " + accel);
                     if (accel >= maxmoveSDP)
                     {
+                        
                         accel = maxmoveSDP;
+                        Debug.Log("accel " + accel);
                     }
-                    rigbody.AddForce( direction* accel * Time.deltaTime) ;
-                  //  rigbody.AddForce(transform.position - cockpit.position * moveSDP/2);
-                  //  Debug.Log("accelerating!! " + ( cockpit.position- transform.position  * moveSDP));
+                    rigbody.AddForce( direction* accel* 10 ) ;
+                    Debug.Log("accel " + direction * accel*10 );
+                    //  rigbody.AddForce(transform.position - cockpit.position * moveSDP/2);
+                    //  Debug.Log("accelerating!! " + ( cockpit.position- transform.position  * moveSDP));
 
                 }
+                accel -= 30f;
+                if (accel <= 0)
+                {
+                    Debug.Log("accel 0");
+                    accel = 0;
+                }
+                rigbody.AddForce(direction * -accel * 30 );
 
-
-              //  Debug.Log("grados : "+degrees);
+                //  Debug.Log("grados : "+degrees);
 
 
 
