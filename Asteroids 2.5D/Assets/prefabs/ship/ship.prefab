@@ -340,8 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfeec1a69a77144a8d53b2b7e330191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotatonSPD: 15
-  maxmoveSDP: 0
+  rotatonSPD: 4
+  maxmoveSDP: 10000
   accel: 0
   rigbody: {fileID: 0}
   cockpit: {fileID: 5027685550519486171}
