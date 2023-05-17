@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Asteroide3 : MonoBehaviour
+
 {
    public GameObject rock;
     /*public Gameplay gameplay;*/
@@ -25,7 +26,7 @@ public class Asteroide3 : MonoBehaviour
         rotationY = Random.Range(-maxRotation, maxRotation);
         rotationZ = Random.Range(-maxRotation, maxRotation);
 
-        /*rb = rock.GetComponent();*/
+        rb = rock.GetComponent <Rigidbody> ();
 
         float speedX = Random.Range(200f, 800f);
         int selectorX = Random.Range(0, 2);
