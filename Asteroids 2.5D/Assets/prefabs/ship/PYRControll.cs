@@ -22,8 +22,10 @@ public class PYRControll : MonoBehaviour
 
 
     public Vector3 worldPosition;
+
     public Plane plane = new Plane(Vector3.up, 10);
-    float distance;
+
+   public  float distance;
 
     public bool inspace;
 
@@ -49,8 +51,10 @@ public class PYRControll : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Mouse0))
             {
+                
 
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                Debug.Log("draw ray "+ray);
 
                 if (plane.Raycast(ray, out distance))
                 {
@@ -72,6 +76,8 @@ public class PYRControll : MonoBehaviour
                 //TmMos1 = Time.time;
 
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+               // Debug.Log("ray cast " + ray);
 
                 if (plane.Raycast(ray, out distance))
                 {
@@ -113,27 +119,28 @@ public class PYRControll : MonoBehaviour
 
                     //   Debug.Log("going to :" + direction);
                     accel+=100f;
-                    Debug.Log("accel " + accel);
+                   // Debug.Log("accel " + accel);
                     if (accel >= maxmoveSDP)
                     {
                         
                         accel = maxmoveSDP;
-                        Debug.Log("accel " + accel);
+                      //  Debug.Log("accel " + accel);
                     }
                     rigbody.AddForce( direction* accel* 10 ) ;
-                    Debug.Log("accel " + direction * accel*10 );
+                    //Debug.Log("accel " + direction * accel*10 );
                     //  rigbody.AddForce(transform.position - cockpit.position * moveSDP/2);
                     //  Debug.Log("accelerating!! " + ( cockpit.position- transform.position  * moveSDP));
 
                 }
-                accel -= 30f;
-                if (accel <= 0)
-                {
-                    Debug.Log("accel 0");
-                    accel = 0;
-                }
-                rigbody.AddForce(direction * -accel * 30 );
+           //*    accel -= 30f;
+            //    if (accel <= 0)
+              //  {
+                   // Debug.Log("accel 0");
+                 //   accel = 0;
+               // }
+              //  rigbody.AddForce(direction * -accel * 30 );
 
+                
                 //  Debug.Log("grados : "+degrees);
 
 
