@@ -39,12 +39,6 @@ public class positionControll : MonoBehaviour
             corners[3] = new Vector3(corn4.GetPoint(distance).x, corn4.GetPoint(distance).y, corn4.GetPoint(distance).z);
         }
 
-        for (int i=0;i<4 ;i++) 
-        {
-            Debug.Log("corners post "+i+" :"+corners[i]);
-
-        }
-
     }
 
     // Update is called once per frame
