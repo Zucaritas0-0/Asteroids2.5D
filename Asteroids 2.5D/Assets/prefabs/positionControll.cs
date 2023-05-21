@@ -44,13 +44,17 @@ public class positionControll : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(obj.transform.position.x< corners[0].x|| obj.transform.position.z < corners[0].z|| obj.transform.position.x > corners[3].x || obj.transform.position.z > corners[3].z) 
+        if (obj.transform.position.x < corners[0].x ||   obj.transform.position.x > corners[3].x )
         {
-            obj.transform.position = new Vector3( obj.transform.position.x * -1,transform.position.y, obj.transform.position.z * -1);
+            obj.transform.position = new Vector3(obj.transform.position.x * -1, transform.position.y, obj.transform.position.z );
         }
-  
-
-
-
+        if ( obj.transform.position.z < corners[0].z ||  obj.transform.position.z > corners[3].z)
+        {
+            obj.transform.position = new Vector3(obj.transform.position.x , transform.position.y, obj.transform.position.z * -1);
         }
+
+
+
+
+    }
 }
