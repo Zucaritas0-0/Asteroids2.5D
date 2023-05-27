@@ -173,5 +173,11 @@ public class PYRControll : MonoBehaviour
 
     private void shoot() { }
 
+    private void OnBecameInvisible()
+    {
+        rigbody.AddForce(direction *  3000);
+
+    }
+
 
 }

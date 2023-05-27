@@ -48,7 +48,7 @@ public class positionControll : MonoBehaviour
         {
             obj.transform.position = new Vector3(obj.transform.position.x * -1, transform.position.y, obj.transform.position.z );
         }
-        if ( obj.transform.position.z < corners[0].z ||  obj.transform.position.z > corners[3].z)
+        if ( obj.transform.position.z < corners[0].z+30 ||  obj.transform.position.z > corners[3].z-30)
         {
             obj.transform.position = new Vector3(obj.transform.position.x , transform.position.y, obj.transform.position.z * -1);
         }
