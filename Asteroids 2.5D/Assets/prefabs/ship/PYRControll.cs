@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PYRControll : MonoBehaviour
 {
 
@@ -29,8 +30,10 @@ public class PYRControll : MonoBehaviour
 
     public bool inspace;
 
-    public Vector3 distCM; 
+    public Vector3 distCM;
 
+    int sampleFreq = 44000;
+    float frequency = 440;
 
 
 
@@ -171,11 +174,28 @@ public class PYRControll : MonoBehaviour
         }
     }
 
-    private void shoot() { }
+    private void shoot() {
+
+        float[] samples = new float[44000];
+        for (int i = 0; i < samples.Length; i++)
+        {
+            samples[i] = Mathf.Sin(Mathf.PI * 2 * i * frequency / sampleFreq);
+        }
+        AudioClip ac = AudioClip.Create("Test", samples.Length, 1, sampleFreq, false);
+
+        ac.SetData(samples, 0);
+
+        //  ac.
+
+        ac.LoadAudioData();
+       
+
+
+    }
 
     private void OnBecameInvisible()
     {
-        rigbody.AddForce(direction *  3000);
+        rigbody.AddForce(direction *  3500);
 
     }
 
