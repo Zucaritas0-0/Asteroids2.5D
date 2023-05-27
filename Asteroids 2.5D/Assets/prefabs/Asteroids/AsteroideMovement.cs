@@ -12,19 +12,18 @@ public class AsteroideMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        destiny = new Vector3(Random.Range(-10,10),transform.position.y,Random.Range(-10,10))-transform.position;
+        destiny = new Vector3(Random.Range(-80,80),transform.position.y,Random.Range(-80,80))-transform.position;
         rb = GetComponent<Rigidbody>();
         rb.AddForce(destiny.normalized*Random.Range(200,300));
         cam = Camera.main;
 
-        
     }
 
     private void FixedUpdate()
     {
         Vector3 distancia;
-        distancia = transform.position-destiny;
-        if(distancia.magnitude>17){
+        distancia = transform.position;
+        if(distancia.magnitude>45){
             Destroy(this.gameObject);
         }
         Debug.Log("distancia:  "+ distancia.magnitude);

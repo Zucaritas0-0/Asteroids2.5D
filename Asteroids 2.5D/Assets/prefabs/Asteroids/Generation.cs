@@ -5,7 +5,7 @@ using UnityEngine;
 public class Generation : MonoBehaviour{
 
     public GameObject objeto;
-    public float respawnTime = 80.0f;
+    public float respawnTime = 200.0f;
     public float spawnrange;
 
 
