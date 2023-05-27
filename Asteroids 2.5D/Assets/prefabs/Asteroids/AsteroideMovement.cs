@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class AsteroideMovement : MonoBehaviour
 {
-    //public Rigidbody rigidbody;
+    public Rigidbody rb;
     Vector3 destiny;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        destiny = new Vector3(0,transform.position.y,0)-transform.position;
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.AddForce(destiny.normalized*25);
+        destiny = new Vector3(Random.Range(-10,10),transform.position.y,Random.Range(-10,10))-transform.position;
+        rb = GetComponent<Rigidbody>();
+        rb.AddForce(destiny.normalized*Random.Range(200,300));
         
     }
 }
