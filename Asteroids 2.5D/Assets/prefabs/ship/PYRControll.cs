@@ -19,7 +19,7 @@ public class PYRControll : MonoBehaviour
     public Vector3 mousepost;
     private Camera cam;
     public float degrees;
-    private Vector3 direction;
+    public Vector3 direction;
 
 
     public Vector3 worldPosition;
@@ -33,9 +33,12 @@ public class PYRControll : MonoBehaviour
     public Vector3 distCM;
 
     int sampleFreq = 44000;
-    float frequency = 440;
+    float frequency = 350;
     public AudioSource beepplayer ;
-    AudioClip ac;
+    private AudioClip ac;
+
+
+    public GameObject instantiation;
 
 
 
@@ -47,18 +50,6 @@ public class PYRControll : MonoBehaviour
         rigbody = GetComponent<Rigidbody>();
 
 
-        float[] samples = new float[44000];
-        for (int i = 0; i < samples.Length; i++)
-        {
-            samples[i] = Mathf.Sin(Mathf.PI * 2 * i * frequency / sampleFreq);
-        }
-         ac = AudioClip.Create("Test", samples.Length, 1, sampleFreq, false);
-
-        ac.SetData(samples, 0);
-
-        //  ac.
-
-        ac.LoadAudioData();
 
 
     }
@@ -196,15 +187,18 @@ public class PYRControll : MonoBehaviour
 
     private void shoot() {
 
-       
 
-        beepplayer.clip = ac;
+        // for (float j = frequency; frequency > 0; frequency--)
+        //   {
 
-        Debug.Log("ac"+ac);
 
-        beepplayer.Play();
-       
 
+       Instantiate(instantiation,transform.position, transform.rotation);
+
+
+
+
+    //    }
 
     }
 
@@ -214,5 +208,29 @@ public class PYRControll : MonoBehaviour
 
     }
 
+    /*** usar esto para reproducir sonidos en espacios diferentes
+     * 
+          float[] samples = new float[400000];
+           for (int i = 0; i < samples.Length; i++)
+           {
+               samples[i] = Mathf.Sin(Mathf.PI * 2 * i * frequency / sampleFreq);
+           }
+           ac = AudioClip.Create("Test", samples.Length, 1, sampleFreq, false);
 
+           ac.SetData(samples, 0);
+
+           ac.LoadAudioData();
+
+
+
+
+           beepplayer.clip = ac;
+
+           //  Debug.Log("ac"+ac);
+
+           beepplayer.Play();
+     
+     
+     
+     */
 }

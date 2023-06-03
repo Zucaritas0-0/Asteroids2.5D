@@ -451,6 +451,8 @@ MonoBehaviour:
   distance: 0
   inspace: 1
   distCM: {x: 0, y: 0, z: 0}
+  beepplayer: {fileID: 0}
+  instantiation: {fileID: 4717689542877566873, guid: 51316b42bd8bc1f41b708f9d363bd72e, type: 3}
 --- !u!54 &-3850919777321157745
 Rigidbody:
   m_ObjectHideFlags: 0

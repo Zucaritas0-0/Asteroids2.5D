@@ -26,7 +26,7 @@ public class AsteroideMovement : MonoBehaviour
         if(distancia.magnitude>45){
             Destroy(this.gameObject);
         }
-        Debug.Log("distancia:  "+ distancia.magnitude);
+        //Debug.Log("distancia:  "+ distancia.magnitude);
 
     }
 
