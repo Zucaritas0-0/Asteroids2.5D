@@ -34,13 +34,33 @@ public class PYRControll : MonoBehaviour
 
     int sampleFreq = 44000;
     float frequency = 440;
+    public AudioSource beepplayer ;
+    AudioClip ac;
 
 
 
     void Start()
+
     {
+        beepplayer = GetComponent<AudioSource>();
         cam = Camera.main;
         rigbody = GetComponent<Rigidbody>();
+
+
+        float[] samples = new float[44000];
+        for (int i = 0; i < samples.Length; i++)
+        {
+            samples[i] = Mathf.Sin(Mathf.PI * 2 * i * frequency / sampleFreq);
+        }
+         ac = AudioClip.Create("Test", samples.Length, 1, sampleFreq, false);
+
+        ac.SetData(samples, 0);
+
+        //  ac.
+
+        ac.LoadAudioData();
+
+
     }
 
 
@@ -176,18 +196,13 @@ public class PYRControll : MonoBehaviour
 
     private void shoot() {
 
-        float[] samples = new float[44000];
-        for (int i = 0; i < samples.Length; i++)
-        {
-            samples[i] = Mathf.Sin(Mathf.PI * 2 * i * frequency / sampleFreq);
-        }
-        AudioClip ac = AudioClip.Create("Test", samples.Length, 1, sampleFreq, false);
+       
 
-        ac.SetData(samples, 0);
+        beepplayer.clip = ac;
 
-        //  ac.
+        Debug.Log("ac"+ac);
 
-        ac.LoadAudioData();
+        beepplayer.Play();
        
 
 
