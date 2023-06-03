@@ -20,6 +20,7 @@ public class PYRControll : MonoBehaviour
     private Camera cam;
     public float degrees;
     public Vector3 direction;
+    public float cooldown;
 
 
     public Vector3 worldPosition;
@@ -32,10 +33,12 @@ public class PYRControll : MonoBehaviour
 
     public Vector3 distCM;
 
-    int sampleFreq = 44000;
-    float frequency = 350;
+
+
+    //int sampleFreq = 44000;
+   // float frequency = 350;
     public AudioSource beepplayer ;
-    private AudioClip ac;
+   // private AudioClip ac;
 
 
     public GameObject instantiation;
@@ -87,11 +90,9 @@ public class PYRControll : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                //TmMos1 = Time.time;
+               
 
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-               // Debug.Log("ray cast " + ray);
 
                 if (plane.Raycast(ray, out distance))
                 {
@@ -106,8 +107,10 @@ public class PYRControll : MonoBehaviour
                 if (degrees <= 135 && degrees >= 45)
                 {
 
-                    shoot();
-                   Debug.Log("sooot!!");
+
+
+                    if (Time.time >= TmMos1 + cooldown) { shoot(); }
+                    
 
                 }
                 if (degrees <= 180 && degrees > 135 || (degrees >= -180 && degrees < -135) )
@@ -115,90 +118,46 @@ public class PYRControll : MonoBehaviour
 
                     transform.Rotate(Vector3.up,+rotatonSPD);
 
-                   // transform.eulerAngles += Vector3.up * rotatonSPD;
-                 //   Debug.Log("spinnighright!");
-
                 }
                 if (degrees > -45 && degrees < 45)
                 {
 
                     transform.Rotate(Vector3.up, -rotatonSPD);
 
-                  //  transform.eulerAngles -= Vector3.up * rotatonSPD;
-                //    Debug.Log("spinnigleft!");
-
                 }
                 if (degrees >= -135 && degrees <= -45)
                 {
 
-                    //   Debug.Log("going to :" + direction);
                     accel+=100f;
-                   // Debug.Log("accel " + accel);
+
                     if (accel >= maxmoveSDP)
                     {
                         
                         accel = maxmoveSDP;
-                      //  Debug.Log("accel " + accel);
                     }
                     rigbody.AddForce( direction* accel* 10 ) ;
-                    //Debug.Log("accel " + direction * accel*10 );
-                    //  rigbody.AddForce(transform.position - cockpit.position * moveSDP/2);
-                    //  Debug.Log("accelerating!! " + ( cockpit.position- transform.position  * moveSDP));
+
 
                 }
-           //*    accel -= 30f;
-            //    if (accel <= 0)
-              //  {
-                   // Debug.Log("accel 0");
-                 //   accel = 0;
-               // }
-              //  rigbody.AddForce(direction * -accel * 30 );
-
-                
-                //  Debug.Log("grados : "+degrees);
-
+    
 
 
 
             }
 
 
-            /*
-
-             si dedo esta a la izquierda de la pantalla, nave gira izquierda
-            si dedo an el fondo, disparar
-            si dedo a la derecha, girar erecha,
-            si dedo arriba, acelerar
 
 
-
-             */
-
-
-            //Debug.Log(ray);
-            //Debug.Log(worldPosition);
-
-            //Debug.Log("x "+Input.mousePosition.x);
-            //Debug.Log("y "+Input.mousePosition.y);
-            // Debug.Log("z "+Input.mousePosition.z);
 
         }
     }
 
     private void shoot() {
 
+        
 
-        // for (float j = frequency; frequency > 0; frequency--)
-        //   {
-
-
-
-       Instantiate(instantiation,transform.position, transform.rotation);
-
-
-
-
-    //    }
+        Instantiate(instantiation,transform.position, transform.rotation);
+        TmMos1 = Time.time;
 
     }
 

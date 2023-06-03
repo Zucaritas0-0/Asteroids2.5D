@@ -26,18 +26,14 @@ public class proyectilemovement : MonoBehaviour
         {
             samples[i] = Mathf.Sin(Mathf.PI * 2 * i * frequency / sampleFreq);
         }
+
         ac = AudioClip.Create("Test", samples.Length, 1, sampleFreq, false);
 
         ac.SetData(samples, 0);
 
         ac.LoadAudioData();
 
-
-
-
         beepplayer.clip = ac;
-
-        //  Debug.Log("ac"+ac);
 
         beepplayer.Play();
 
@@ -45,12 +41,4 @@ public class proyectilemovement : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
-        
-     
-
-    }
 }
