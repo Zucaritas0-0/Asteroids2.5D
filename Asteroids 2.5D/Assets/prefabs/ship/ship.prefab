@@ -447,6 +447,8 @@ MonoBehaviour:
   TmMos2: 0
   mousepost: {x: 0, y: 0, z: 0}
   degrees: 0
+  direction: {x: 0, y: 0, z: 0}
+  cooldown: 0.5
   worldPosition: {x: 0, y: 0, z: 0}
   distance: 0
   inspace: 1
