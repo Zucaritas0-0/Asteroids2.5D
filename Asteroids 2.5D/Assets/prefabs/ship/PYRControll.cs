@@ -128,7 +128,8 @@ public class PYRControll : MonoBehaviour
                 if (degrees >= -135 && degrees <= -45)
                 {
 
-                    accel+=50f;
+                    accel+=600f;
+                    rigbody.AddForce(direction * 5);
 
                     if (accel >= maxmoveSDP)
                     {
