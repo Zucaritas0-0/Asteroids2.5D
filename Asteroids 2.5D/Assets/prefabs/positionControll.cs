@@ -16,6 +16,7 @@ public class positionControll : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        obj = this.transform;
 
         Ray corn1 = cam.ScreenPointToRay(new Vector3(0, 0, 0));
         Ray corn2 = cam.ScreenPointToRay(new Vector3(Screen.width, 0, 0));

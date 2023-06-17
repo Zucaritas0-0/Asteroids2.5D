@@ -128,7 +128,7 @@ public class PYRControll : MonoBehaviour
                 if (degrees >= -135 && degrees <= -45)
                 {
 
-                    accel+=100f;
+                    accel+=50f;
 
                     if (accel >= maxmoveSDP)
                     {
