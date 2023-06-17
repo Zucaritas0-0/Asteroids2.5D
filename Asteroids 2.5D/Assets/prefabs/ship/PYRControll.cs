@@ -104,6 +104,7 @@ public class PYRControll : MonoBehaviour
                 direction = new Vector3(transform.position.x - cockpit.transform.position.x,0,
                                             transform.position.z - cockpit.transform.position.z).normalized * -1;
 
+       
                 if (degrees <= 135 && degrees >= 45)
                 {
 
@@ -155,9 +156,10 @@ public class PYRControll : MonoBehaviour
 
     private void shoot() {
 
-        
 
-        Instantiate(instantiation,transform.position, transform.rotation);
+        Debug.Log("ship direction " + direction);
+
+        Instantiate(instantiation,cockpit.transform.position, transform.rotation);
         TmMos1 = Time.time;
 
     }

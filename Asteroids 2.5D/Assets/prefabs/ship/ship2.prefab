@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6235731960229929665}
   m_Layer: 0
   m_Name: ship2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   inspace: 1
   distCM: {x: 0, y: 0, z: 0}
   beepplayer: {fileID: 0}
-  instantiation: {fileID: 4717689542877566873, guid: 51316b42bd8bc1f41b708f9d363bd72e, type: 3}
+  instantiation: {fileID: 4809476352467779156, guid: d8f505663a855064eb3415eb64f8cbb4, type: 3}
 --- !u!64 &659043791705125129
 MeshCollider:
   m_ObjectHideFlags: 0

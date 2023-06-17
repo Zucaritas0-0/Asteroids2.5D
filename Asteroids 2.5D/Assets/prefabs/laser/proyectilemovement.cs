@@ -6,17 +6,20 @@ public class proyectilemovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public Rigidbody rb;
-    public PYRControll ownerP;
+    public GameObject ownerP;
 
     int sampleFreq = 44000;
     float frequency = 350;
     public AudioSource beepplayer;
     private AudioClip ac;
+    public Vector3 direction;
 
     void Start()
     {
+       transform.Rotate(ownerP.transform.rotation.eulerAngles*-1);
+        direction = ownerP.GetComponent<PYRControll>().direction;
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.forward * 1000);
+      
         beepplayer = GetComponent<AudioSource>();
 
 
@@ -36,6 +39,11 @@ public class proyectilemovement : MonoBehaviour
         beepplayer.clip = ac;
 
         beepplayer.Play();
+
+        rb.AddForce(Quaternion.Euler( transform.rotation.x, transform.rotation.y, transform.rotation.z) *Vector3.forward* 1000 );
+     
+  
+
 
 
 
