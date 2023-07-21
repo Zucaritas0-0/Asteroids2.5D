@@ -8,10 +8,10 @@ public class proyectilemovement : MonoBehaviour
     public Rigidbody rb;
     //public GameObject ownerP;
 
-    int sampleFreq = 44000;
-    float frequency = 250;
-    public AudioSource beepplayer;
-    private AudioClip ac;
+    //int sampleFreq = 44000;
+    //float frequency = 250;
+    //public AudioSource beepplayer;
+    //private AudioClip ac;
     public Vector3 direction;
 
     void Start()
@@ -22,25 +22,25 @@ public class proyectilemovement : MonoBehaviour
         
         rb = GetComponent<Rigidbody>();
       
-        beepplayer = GetComponent<AudioSource>();
+      //  beepplayer = GetComponent<AudioSource>();
 
 
 
-        float[] samples = new float[400000];
-        for (int i = 0; i < samples.Length; i++)
-        {
-            samples[i] = Mathf.Sin(Mathf.PI * 2 * i * frequency / sampleFreq);
-        }
+      //  float[] samples = new float[400000];
+      //  for (int i = 0; i < samples.Length; i++)
+      //  {
+      //      samples[i] = Mathf.Sin(Mathf.PI * 2 * i * frequency / sampleFreq);
+      //  }
 
-        ac = AudioClip.Create("Test", samples.Length, 1, sampleFreq, false);
+        //ac = AudioClip.Create("Test", samples.Length, 1, sampleFreq, false);
 
-        ac.SetData(samples, 0);
+      //  ac.SetData(samples, 0);
 
-        ac.LoadAudioData();
+     //  ac.LoadAudioData();
 
-        beepplayer.clip = ac;
+      //  beepplayer.clip = ac;
 
-        beepplayer.Play();
+       // beepplayer.Play();
 
         rb.AddForce( direction * 500);
         Debug.Log("bullet direction" + direction);
