@@ -156,11 +156,15 @@ public class PYRControll : MonoBehaviour
 
     private void shoot() {
 
+        if(TmMos1 + cooldown < Time.time )
+        {
+            Debug.Log("ship direction " + direction);
 
-        Debug.Log("ship direction " + direction);
+            Instantiate(instantiation, cockpit.transform.position, transform.rotation);
+            TmMos1 = Time.time;
+        }
 
-        Instantiate(instantiation,cockpit.transform.position, transform.rotation);
-        TmMos1 = Time.time;
+  
 
     }
 
