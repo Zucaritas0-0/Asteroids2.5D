@@ -14,7 +14,7 @@ public class PYRControll : MonoBehaviour
     public Rigidbody rigbody;
     public Transform cockpit;
 
-    public float TmMos1, TmMos2;
+    public float TmMos1, TmMos2=0;
 
     public Vector3 mousepost;
     private Camera cam;
@@ -53,6 +53,7 @@ public class PYRControll : MonoBehaviour
       
         cam = Camera.main;
         rigbody = GetComponent<Rigidbody>();
+        
 
 
 
