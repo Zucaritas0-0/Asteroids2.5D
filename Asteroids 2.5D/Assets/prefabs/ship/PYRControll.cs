@@ -110,7 +110,10 @@ public class PYRControll : MonoBehaviour
 
 
 
-                    if (Time.time >= TmMos1 + cooldown) { shoot(); }
+                    if (Time.time >= TmMos1 + cooldown) {
+                        shoot();
+                        beepplayer.Play();
+                         }
                     
 
                 }
