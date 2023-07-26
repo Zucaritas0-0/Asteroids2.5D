@@ -151,7 +151,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.85147053, b: 0.5415094, a: 1}
+  m_Color: {r: 1, g: 0.5411765, b: 0.5814651, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -335,6 +335,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2461717147707916850, guid: 8eda59b08352afb4790cedb80fa72e7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652193921574154805, guid: 8eda59b08352afb4790cedb80fa72e7c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652193921574154805, guid: 8eda59b08352afb4790cedb80fa72e7c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652193921574154805, guid: 8eda59b08352afb4790cedb80fa72e7c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652193921574154805, guid: 8eda59b08352afb4790cedb80fa72e7c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652193921574154805, guid: 8eda59b08352afb4790cedb80fa72e7c, type: 3}
+      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2981970227353229448, guid: 8eda59b08352afb4790cedb80fa72e7c, type: 3}
