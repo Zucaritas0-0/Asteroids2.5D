@@ -27,18 +27,19 @@ public class PYRControll : MonoBehaviour
 
     public Plane plane = new Plane(Vector3.up, 10);
 
-   public  float distance;
+    public float distance;
 
     public bool inspace;
 
     public Vector3 distCM;
-
+    public AudioClip [] shipnoisses = new AudioClip[0];
 
 
     //int sampleFreq = 44000;
-   // float frequency = 350;
-    public AudioSource beepplayer ;
-   // private AudioClip ac;
+    // float frequency = 350;
+    public AudioSource beepplayer;
+   
+    // private AudioClip ac;
 
 
     public GameObject instantiation;
@@ -49,6 +50,7 @@ public class PYRControll : MonoBehaviour
 
     {
         beepplayer = GetComponent<AudioSource>();
+      
         cam = Camera.main;
         rigbody = GetComponent<Rigidbody>();
 
@@ -112,7 +114,7 @@ public class PYRControll : MonoBehaviour
 
                     if (Time.time >= TmMos1 + cooldown) {
                         shoot();
-                        beepplayer.Play();
+                       
                          }
                     
 
@@ -139,7 +141,17 @@ public class PYRControll : MonoBehaviour
                     {
                         
                         accel = maxmoveSDP;
+
                     }
+
+                    beepplayer.clip = shipnoisses[1];
+                    
+                   if(TmMos2 + shipnoisses[1].length < Time.time) {
+                        TmMos2 = Time.time;
+                        beepplayer.Play();
+                    }
+                        
+                    
                     rigbody.AddForce( direction* accel* 10 ) ;
 
 
@@ -161,7 +173,10 @@ public class PYRControll : MonoBehaviour
 
         if(TmMos1 + cooldown < Time.time )
         {
-            Debug.Log("ship direction " + direction);
+
+            // Debug.Log("ship direction " + direction);
+            beepplayer.clip = shipnoisses[0];
+            beepplayer.Play();
 
             Instantiate(instantiation, cockpit.transform.position, transform.rotation);
             TmMos1 = Time.time;
