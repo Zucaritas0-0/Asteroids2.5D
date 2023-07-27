@@ -39,6 +39,7 @@ public class PYRControll : MonoBehaviour
     //int sampleFreq = 44000;
     // float frequency = 350;
     public AudioSource beepplayer;
+    public AudioSource enginenoise;
    
     // private AudioClip ac;
 
@@ -51,8 +52,9 @@ public class PYRControll : MonoBehaviour
 
     {
         beepplayer = GetComponent<AudioSource>();
-      
-        cam = Camera.main;
+        enginenoise =  transform.GetComponentInChildren <AudioSource>() ;
+
+    cam = Camera.main;
         rigbody = GetComponent<Rigidbody>();
         
 
@@ -146,22 +148,26 @@ public class PYRControll : MonoBehaviour
 
                     }
 
-                    beepplayer.clip = shipnoisses[1];
+                  
                     
                   
                     activemovement = true;
                     
                     rigbody.AddForce( direction* accel* 10 ) ;
 
-                    if (activemovement== true) { }
+                    
                 }
                 
 
-                if (TmMos2 + shipnoisses[1].length < Time.time)
+                if ( activemovement == true)
                 {
-                    TmMos2 = Time.time - 0.3f;
-                    beepplayer.Play();
+                    enginenoise.loop = true;
+
+
+                   enginenoise.Play(); ;
                 }
+                enginenoise.Stop(); 
+                enginenoise.loop = false;
 
             }
             activemovement = false;
