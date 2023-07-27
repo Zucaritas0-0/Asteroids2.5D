@@ -21,6 +21,7 @@ public class PYRControll : MonoBehaviour
     public float degrees;
     public Vector3 direction;
     public float cooldown;
+    private bool activemovement;
 
 
     public Vector3 worldPosition;
@@ -147,22 +148,23 @@ public class PYRControll : MonoBehaviour
 
                     beepplayer.clip = shipnoisses[1];
                     
-                   if(TmMos2 + shipnoisses[1].length < Time.time) {
-                        TmMos2 = Time.time;
-                        beepplayer.Play();
-                    }
-                        
+                  
+                    activemovement = true;
                     
                     rigbody.AddForce( direction* accel* 10 ) ;
 
-
+                    if (activemovement== true) { }
                 }
-    
+                
 
-
+                if (TmMos2 + shipnoisses[1].length < Time.time)
+                {
+                    TmMos2 = Time.time - 0.3f;
+                    beepplayer.Play();
+                }
 
             }
-
+            activemovement = false;
 
 
 
