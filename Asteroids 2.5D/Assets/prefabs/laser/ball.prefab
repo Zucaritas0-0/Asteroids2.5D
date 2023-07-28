@@ -114,9 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  ownerP: {fileID: 2981970227353229448, guid: 8eda59b08352afb4790cedb80fa72e7c, type: 3}
-  beepplayer: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
+  proyectilespeed: 650
 --- !u!54 &4746784477053851091
 Rigidbody:
   m_ObjectHideFlags: 0

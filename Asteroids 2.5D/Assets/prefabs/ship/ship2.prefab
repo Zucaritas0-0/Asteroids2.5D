@@ -113,14 +113,16 @@ MonoBehaviour:
   mousepost: {x: 0, y: 0, z: 0}
   degrees: 0
   direction: {x: 0, y: 0, z: 0}
-  cooldown: 1
+  cooldown: 0.5
   worldPosition: {x: 0, y: 0, z: 0}
   distance: 0
   inspace: 1
   distCM: {x: 0, y: 0, z: 0}
   shipnoisses:
   - {fileID: 8300000, guid: cbad5f0919473c643970287dcd83c6f9, type: 3}
+  engine: {fileID: 6216732480173375649}
   beepplayer: {fileID: 0}
+  enginenoise: {fileID: 0}
   instantiation: {fileID: 4809476352467779156, guid: d8f505663a855064eb3415eb64f8cbb4, type: 3}
 --- !u!64 &659043791705125129
 MeshCollider:
@@ -171,7 +173,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 1.68
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -208,7 +210,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.222
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -238,7 +240,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.68
       inSlope: 0
       outSlope: 0
       tangentMode: 0

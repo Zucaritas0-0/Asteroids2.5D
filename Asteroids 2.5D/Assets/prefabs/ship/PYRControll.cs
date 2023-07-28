@@ -34,6 +34,7 @@ public class PYRControll : MonoBehaviour
 
     public Vector3 distCM;
     public AudioClip [] shipnoisses = new AudioClip[0];
+    public GameObject engine;
 
 
     //int sampleFreq = 44000;
@@ -52,7 +53,7 @@ public class PYRControll : MonoBehaviour
 
     {
         beepplayer = GetComponent<AudioSource>();
-        enginenoise =  transform.GetComponentInChildren <AudioSource>() ;
+        enginenoise =  engine.GetComponent<AudioSource>() ;
 
     cam = Camera.main;
         rigbody = GetComponent<Rigidbody>();
@@ -137,7 +138,9 @@ public class PYRControll : MonoBehaviour
                 }
                 if (degrees >= -135 && degrees <= -45)
                 {
-
+                   
+                      
+                    
                     accel+=600f;
                     rigbody.AddForce(direction * 5);
 
@@ -148,34 +151,52 @@ public class PYRControll : MonoBehaviour
 
                     }
 
-                  
-                    
-                  
-                    activemovement = true;
-                    
+                    if(activemovement==false){
+                        activemovement = true;
+                        enginenoise.loop = true;
+                        enginenoise.Play();
+
+                    }
+
+
+
                     rigbody.AddForce( direction* accel* 10 ) ;
 
                     
                 }
-                
+               
 
-                if ( activemovement == true)
-                {
-                    enginenoise.loop = true;
+                // enginenoise.Stop();
+                //enginenoise.loop = false;
 
 
-                   enginenoise.Play(); ;
-                }
-                enginenoise.Stop(); 
-                enginenoise.loop = false;
+
 
             }
-            activemovement = false;
+            Playbzz();
 
 
 
 
         }
+    }
+
+    private void  Playbzz() {
+
+      //  Debug.Log("speed" + rigbody.velocity.magnitude);
+
+        if (rigbody.velocity.magnitude<1)
+        {
+            activemovement = false;
+            enginenoise.loop = false;
+            
+      
+
+
+        }
+       
+       
+
     }
 
     private void shoot() {
