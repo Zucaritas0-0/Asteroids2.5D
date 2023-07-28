@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 7eaa83068c37ac64ca2f4a800a713efa
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - a Astro Space
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 846e98085cea34e47b682150445fd4a5, type: 3}
+  - {fileID: 12800000, guid: 76ed02780c10f804993620934615aa4f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
