@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6529463188197437141}
   - component: {fileID: 7868505128145281392}
   - component: {fileID: 5392634976177001914}
-  - component: {fileID: -5197974137716698596}
   - component: {fileID: -1368961533565238821}
   - component: {fileID: -4683496481954738629}
   - component: {fileID: 5926316493392529033}
@@ -88,28 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-5197974137716698596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5897042050553951343}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c94036b7af4323944b898f2033a0432d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objeto: {fileID: 0}
-  respawnTime: 1
-  spawnrange: 0
-  obj: {fileID: 0}
-  distance: 0
-  corners:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
 --- !u!54 &-1368961533565238821
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  asterMinSPD: 100
+  asterMaxSPD: 400
 --- !u!135 &5926316493392529033
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -150,8 +129,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.395624
-  m_Center: {x: 0, y: 1.5595179e-15, z: -0.26271743}
+  m_Radius: 0.5337541
+  m_Center: {x: 0.08212435, y: -3.552714e-15, z: -0.26271755}
 --- !u!114 &5297386045854964814
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,12 +7,14 @@ public class Generation : MonoBehaviour{
     public GameObject objeto;
     public float respawnTime = 200.0f;
     public float spawnrange;
+    public float minYvar;
+    public float maxYvar;
 
 
     // Use this for initialization
     private Camera cam;
     public Plane plane = new Plane(Vector3.up, 10);
-    public Transform obj;
+   // public Transform obj;
     public float distance;
     public Vector3[] corners = new Vector3[4];
 
@@ -50,7 +52,7 @@ public class Generation : MonoBehaviour{
         //a.transform.position = new Vector3(Random.Range (-screenBounds.x , screenBounds.x), -18, Random.Range(-screenBounds.y, screenBounds.y));//
 
         //a.transform.position = new Vector3(Random.Range (corners[0].x, corners[0].x + 10), Random.Range (-18, -23) ,Random.Range (corners[0].z, corners[0].z + 10));//
-        a.transform.position = Quaternion.Euler(0, Random.Range(0, 360), 0)* new Vector3(corners[3].z + spawnrange, Random.Range(-18,-23), corners[3].z + spawnrange);
+        a.transform.position = Quaternion.Euler(0, Random.Range(0, 360), 0)* new Vector3(corners[3].z + spawnrange, Random.Range(minYvar,maxYvar), corners[3].z + spawnrange);
 
             }
     IEnumerator asteroidWave(){

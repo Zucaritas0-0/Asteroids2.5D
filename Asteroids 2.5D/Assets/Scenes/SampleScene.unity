@@ -494,6 +494,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 807361118574110883, guid: 536a49c005c66c943929548d2dc16994, type: 3}
+      propertyPath: spawnrange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 807361118574110883, guid: 536a49c005c66c943929548d2dc16994, type: 3}
+      propertyPath: respawnTime
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 536a49c005c66c943929548d2dc16994, type: 3}
 --- !u!1001 &1039208611
@@ -617,7 +625,8 @@ MonoBehaviour:
   objeto: {fileID: 5897042050553951343, guid: 25c666bff9ce9f043af57e70b6480a95, type: 3}
   respawnTime: 1
   spawnrange: 15
-  obj: {fileID: 0}
+  minYvar: -18
+  maxYvar: -25
   distance: 0
   corners:
   - {x: 0, y: 0, z: 0}

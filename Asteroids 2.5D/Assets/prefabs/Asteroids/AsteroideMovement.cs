@@ -6,7 +6,9 @@ public class AsteroideMovement : MonoBehaviour
 {
     public Rigidbody rb;
     Vector3 destiny;
-    private Camera cam;
+    //private Camera cam;
+    public float asterMinSPD;
+    public float asterMaxSPD;
 
 
     // Start is called before the first frame update
@@ -14,7 +16,7 @@ public class AsteroideMovement : MonoBehaviour
     {
         destiny = new Vector3(Random.Range(-80,80),transform.position.y,Random.Range(-80,80))-transform.position;
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(destiny.normalized*Random.Range(200,300));
+        rb.AddForce(destiny.normalized*Random.Range(asterMinSPD,asterMaxSPD));
         cam = Camera.main;
 
     }
