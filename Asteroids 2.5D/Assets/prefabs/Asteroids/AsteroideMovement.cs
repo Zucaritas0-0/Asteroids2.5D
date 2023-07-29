@@ -6,7 +6,7 @@ public class AsteroideMovement : MonoBehaviour
 {
     public Rigidbody rb;
     Vector3 destiny;
-    //private Camera cam;
+    private Camera cam;
     public float asterMinSPD;
     public float asterMaxSPD;
 
