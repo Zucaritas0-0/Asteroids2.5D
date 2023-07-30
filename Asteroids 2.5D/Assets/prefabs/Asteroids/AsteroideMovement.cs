@@ -9,16 +9,24 @@ public class AsteroideMovement : MonoBehaviour
     private Camera cam;
     public float asterMinSPD;
     public float asterMaxSPD;
+    public float MaxDPTHval;
+    public float MinDPTHval;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        destiny = new Vector3(Random.Range(-80,80),transform.position.y,Random.Range(-80,80))-transform.position;
-        rb = GetComponent<Rigidbody>();
-        rb.AddForce(destiny.normalized*Random.Range(asterMinSPD,asterMaxSPD));
         cam = Camera.main;
+        rb = GetComponent<Rigidbody>();
 
+
+
+        //    destiny = new Vector3(Random.Range(-80,80),transform.position.y,Random.Range(-80,80))-transform.position;
+        destiny = new Vector3(Random.Range(-80, 80), Random.Range(MinDPTHval, MaxDPTHval), Random.Range(-80, 80)) ;
+
+
+        rb.AddForce(destiny.normalized * Random.Range(asterMinSPD, asterMaxSPD));
+        //Debug.Log(this.gameObject.name + destiny.normalized);
     }
 
     private void FixedUpdate()

@@ -51,4 +51,16 @@ public class proyectilemovement : MonoBehaviour
 
     }
 
+
+    private void OnCollisionEnter(Collision collide)
+    {
+       // Destroy(this.gameObject);
+        // Debug.Log("collided with"+collide.collider.transform.tag);
+          if (collide.GetContact(0).otherCollider.tag != "Player") { Destroy(this.gameObject); /*and increase score*/}
+        // if (collide.GetContact(0).otherCollider.tag == collide.GetContact(0).thisCollider.tag) { Destroy(this.gameObject); /*and spawn mini asteroidsS*/}
+    }
+
+
+
+
 }

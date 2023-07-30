@@ -116,8 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  asterMinSPD: 100
-  asterMaxSPD: 400
+  asterMinSPD: 50
+  asterMaxSPD: 600
+  MaxDPTHval: 10
+  MinDPTHval: -5
 --- !u!135 &5926316493392529033
 SphereCollider:
   m_ObjectHideFlags: 0

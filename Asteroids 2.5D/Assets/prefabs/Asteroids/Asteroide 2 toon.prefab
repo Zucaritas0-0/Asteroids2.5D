@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 9199796690004541961}
   - component: {fileID: 6361555549512398531}
   - component: {fileID: -8541166718646311041}
+  - component: {fileID: 32671278090598648}
   - component: {fileID: -696738970060526454}
   - component: {fileID: -993150080907570018}
+  - component: {fileID: 7556151321828288354}
   m_Layer: 0
   m_Name: Asteroide 2 toon
   m_TagString: Untagged
@@ -94,14 +96,27 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4848183689814103830}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &32671278090598648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4848183689814103830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4824b5ccccbaa442848a483c6edc448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationOffset: 400
 --- !u!114 &-696738970060526454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,8 +130,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  asterMinSPD: 100
-  asterMaxSPD: 300
+  asterMinSPD: 1000
+  asterMaxSPD: 4000
+  MaxDPTHval: 0
+  MinDPTHval: 0
 --- !u!135 &-993150080907570018
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -130,3 +147,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.97782135
   m_Center: {x: 0.023387715, y: -0.0038449538, z: 0.03932036}
+--- !u!114 &7556151321828288354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4848183689814103830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f011653580d87040b90e1e269345217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
