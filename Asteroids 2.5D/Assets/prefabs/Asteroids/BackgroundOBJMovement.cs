@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroideMovement : MonoBehaviour
+public class BackgroundOBJMovement : MonoBehaviour
 {
     public Rigidbody rb;
     Vector3 destiny;

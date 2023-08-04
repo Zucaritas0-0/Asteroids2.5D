@@ -201,7 +201,7 @@ public class PYRControll : MonoBehaviour
 
     private void shoot() {
 
-        if(TmMos1 + cooldown < Time.time )
+        if (TmMos1 + cooldown < Time.time)
         {
 
             // Debug.Log("ship direction " + direction);
@@ -209,6 +209,8 @@ public class PYRControll : MonoBehaviour
             beepplayer.Play();
 
             Instantiate(instantiation, cockpit.transform.position, transform.rotation);
+            
+            //poner timer de vida a la bala
             TmMos1 = Time.time;
         }
 

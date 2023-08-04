@@ -14,6 +14,7 @@ public class proyectilemovement : MonoBehaviour
     //private AudioClip ac;
     public Vector3 direction;
     public float proyectilespeed;
+    public int DMG; 
     void Start()
     {
       // transform.Rotate(ownerP.transform.rotation.eulerAngles*-1);
@@ -43,9 +44,9 @@ public class proyectilemovement : MonoBehaviour
        // beepplayer.Play();
 
         rb.AddForce( direction * proyectilespeed);
-      //  Debug.Log("bullet direction" + direction);
-  
+        //  Debug.Log("bullet direction" + direction);
 
+        Destroy(this.gameObject, 3);
 
 
 

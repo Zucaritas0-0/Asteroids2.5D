@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayProyect
   - AsteroidA
+  - AsteroidB
+  - AsteroidC
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Generation : MonoBehaviour{
 
-    public GameObject objeto;
+    public GameObject[] objeto=new GameObject[0];
     public float respawnTime = 200.0f;
     public float spawnrange;
     public float minYvar;
@@ -36,7 +36,7 @@ public class Generation : MonoBehaviour{
         StartCoroutine(asteroidWave());
     }
     private void spawnEnemy(){
-        GameObject a = Instantiate(objeto);// as GameObject;
+        GameObject a = Instantiate(objeto[Random.Range(0,objeto.Length)]);// as GameObject;
         //a.transform.position = new Vector3(Random.Range (-screenBounds.x , screenBounds.x), -18, Random.Range(-screenBounds.y, screenBounds.y));//
 
         //a.transform.position = new Vector3(Random.Range (corners[0].x, corners[0].x + 10), Random.Range (-18, -23) ,Random.Range (corners[0].z, corners[0].z + 10));//
