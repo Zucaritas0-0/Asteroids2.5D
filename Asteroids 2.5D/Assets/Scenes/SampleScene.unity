@@ -514,6 +514,18 @@ PrefabInstance:
       propertyPath: respawnTime
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 807361118574110883, guid: 536a49c005c66c943929548d2dc16994, type: 3}
+      propertyPath: objeto.Array.data[0]
+      value: 
+      objectReference: {fileID: 4848183689814103830, guid: 6f440d5b4aa77164da8956c8e047e9b3, type: 3}
+    - target: {fileID: 807361118574110883, guid: 536a49c005c66c943929548d2dc16994, type: 3}
+      propertyPath: objeto.Array.data[1]
+      value: 
+      objectReference: {fileID: 8928093640869822346, guid: e05c9d96bd589cd488212893459600b6, type: 3}
+    - target: {fileID: 807361118574110883, guid: 536a49c005c66c943929548d2dc16994, type: 3}
+      propertyPath: objeto.Array.data[2]
+      value: 
+      objectReference: {fileID: 5897042050553951343, guid: 02c311b54a5a9c44d9884694b88a3307, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 536a49c005c66c943929548d2dc16994, type: 3}
 --- !u!1001 &1039208611
@@ -638,7 +650,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94036b7af4323944b898f2033a0432d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objeto: {fileID: 5897042050553951343, guid: 25c666bff9ce9f043af57e70b6480a95, type: 3}
+  objeto:
+  - {fileID: 4848183689814103830, guid: 9ad2605bf10a4284eaf8235657eb553b, type: 3}
+  - {fileID: 8928093640869822346, guid: 72b566c29f0cb5a46bd53e1127dbfaaa, type: 3}
+  - {fileID: 5897042050553951343, guid: 25c666bff9ce9f043af57e70b6480a95, type: 3}
   respawnTime: 1
   spawnrange: 15
   minYvar: -18
