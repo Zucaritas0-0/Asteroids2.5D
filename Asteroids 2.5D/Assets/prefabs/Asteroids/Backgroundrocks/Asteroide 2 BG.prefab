@@ -145,8 +145,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   asterMinSPD: 1000
   asterMaxSPD: 4000
-  MaxDPTHval: 0
-  MinDPTHval: 0
+  MaxDPTHval: -18
+  MinDPTHval: -25
 --- !u!114 &7556151321828288354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,3 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f011653580d87040b90e1e269345217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 0
+  instantiation: {fileID: 0}

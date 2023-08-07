@@ -29,7 +29,7 @@ public class AsteroidTOPControll : MonoBehaviour
         if (collide.GetContact(0).otherCollider.tag =="PlayProyect") {
 
             HP -= collide.GetContact(0).otherCollider.GetComponent<proyectilemovement>().DMG;
-            Debug.Log("hp :" + HP);
+           
             if (HP <= 0) {
 
                 /*and increase score*/

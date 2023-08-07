@@ -135,8 +135,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   asterMinSPD: 922
   asterMaxSPD: 6235
-  MaxDPTHval: 0
-  MinDPTHval: 0
+  MaxDPTHval: -18
+  MinDPTHval: -25
 --- !u!114 &-5214973363832845062
 MonoBehaviour:
   m_ObjectHideFlags: 0
