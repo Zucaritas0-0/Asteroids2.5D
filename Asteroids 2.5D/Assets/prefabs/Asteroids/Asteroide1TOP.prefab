@@ -160,4 +160,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  DMG: 1
   instantiation: {fileID: 5897042050553951343}

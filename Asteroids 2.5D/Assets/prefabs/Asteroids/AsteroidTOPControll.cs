@@ -6,6 +6,7 @@ public class AsteroidTOPControll : MonoBehaviour
 {
 
     public int HP;
+    public int DMG;
     public GameObject instantiation ;
 
     void FixedUpdate()

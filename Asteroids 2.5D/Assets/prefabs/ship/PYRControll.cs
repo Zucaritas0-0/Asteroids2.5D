@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PYRControll : MonoBehaviour
 {
+    public int HP;
 
     public float rotatonSPD;
     public float maxmoveSDP;
@@ -223,6 +225,18 @@ public class PYRControll : MonoBehaviour
         rigbody.AddForce(direction *  3500);
 
     }
+    private void OnCollisionEnter(Collision collide)
+    {
+        if (collide.GetContact(0).otherCollider.tag != "PlayProyect")
+        {
+            HP -= collide.GetContact(0).otherCollider.GetComponent<AsteroidTOPControll>().DMG;
+            if (HP <= 0)
+            {
+                SceneManager.LoadScene("GameOverScene");
+            }
+        }
+    }
+
 
     /*** usar esto para reproducir sonidos en espacios diferentes
      * 
