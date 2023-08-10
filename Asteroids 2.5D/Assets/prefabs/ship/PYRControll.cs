@@ -231,7 +231,10 @@ public class PYRControll : MonoBehaviour
         {
             HP -= collide.GetContact(0).otherCollider.GetComponent<AsteroidTOPControll>().DMG;
             if (HP <= 0)
+                
             {
+                EventManager.Masterfile.Finaltime = Time.time;
+                EventManager.Masterfile.newhigscore();
                 SceneManager.LoadScene("GameOverScene");
             }
         }

@@ -161,4 +161,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 1
   DMG: 1
+  scoreVAL: 1
   instantiation: {fileID: 5897042050553951343}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3348660761968288959}
   - component: {fileID: -7873621647209733594}
   - component: {fileID: 807361118574110883}
+  - component: {fileID: 8512200386706418975}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -145,13 +146,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94036b7af4323944b898f2033a0432d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objeto: {fileID: 4848183689814103830, guid: 6f440d5b4aa77164da8956c8e047e9b3, type: 3}
+  objeto:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   respawnTime: 200
   spawnrange: 0
-  obj: {fileID: 0}
+  minYvar: 0
+  maxYvar: 0
   distance: 0
   corners:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+--- !u!114 &8512200386706418975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779803686542077420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abea3a3407caded4e8149e11d48b7067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Finaltime: 0
+  Finalscore: 0
+  FinalName: 0
