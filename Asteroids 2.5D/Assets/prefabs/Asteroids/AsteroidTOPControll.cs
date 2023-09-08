@@ -7,7 +7,10 @@ public class AsteroidTOPControll : MonoBehaviour
 
     public int HP;
     public int DMG;
+    public int scoreVAL;
     public GameObject instantiation ;
+
+   
 
     void FixedUpdate()
     {
@@ -20,6 +23,16 @@ public class AsteroidTOPControll : MonoBehaviour
             transform.position = new Vector3(transform.position.x*-1,0,transform.position.z*-1);
         }
 
+    }
+
+    private void OnBecameInvisible()
+    {
+        GetComponent<SphereCollider>().enabled = false;
+
+    }
+    private void OnBecameVisible()
+    {
+        GetComponent<SphereCollider>().enabled = true;
     }
 
 
@@ -40,7 +53,7 @@ public class AsteroidTOPControll : MonoBehaviour
                         Instantiate(instantiation, transform.position, transform.rotation);
                     }
                 }
-                
+                EventManager.Masterfile.Finalscore += scoreVAL;
                 Destroy(this.gameObject);
             }
 
