@@ -677,7 +677,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 870727613}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 870727615}
+        m_TargetAssemblyTypeName: pause, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &870727613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,7 +740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e52a6f171c2bb44842c8da4d5d352b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 803156680}
 --- !u!1001 &983203052
 PrefabInstance:
   m_ObjectHideFlags: 0

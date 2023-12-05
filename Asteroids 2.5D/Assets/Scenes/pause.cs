@@ -4,41 +4,20 @@ using UnityEngine;
 
 public class pause : MonoBehaviour
 {
-    public GameObject pauseMenuUI;
+   private bool isPaused = false;
 
-    private bool isPaused = false;
-
-    private void Start()
+    // Método para pausar y reanudar el juego
+    public void PauseGame()
     {
-        pauseMenuUI.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape)) // Puedes ajustar la tecla o el método de activación que prefieras
+        if (isPaused)
         {
-            if (isPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            Time.timeScale = 1f; // Reanuda el juego
+            isPaused = false;
         }
-    }
-
-    public void Resume()
-    {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
-    }
-
-    void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
+        else
+        {
+            Time.timeScale = 0f; // Pausa el juego
+            isPaused = true;
+        }
     }
 }
