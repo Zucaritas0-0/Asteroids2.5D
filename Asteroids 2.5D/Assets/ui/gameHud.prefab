@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textVAR: {fileID: 8977998184230376184}
+  textVAR2: {fileID: 0}
+  textVAR3: {fileID: 0}
 --- !u!1 &8977998184230376186
 GameObject:
   m_ObjectHideFlags: 0
