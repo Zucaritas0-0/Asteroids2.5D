@@ -6,24 +6,25 @@ using UnityEngine.SceneManagement;
 public class EventManager : MonoBehaviour
 {
 
-    
-        #region signgleton
-        public static EventManager Masterfile;
 
-        public float Finaltime;
-        public int Finalscore;
-        public string FinalName;
+    #region signgleton
+    public static EventManager Masterfile;
 
-        private float[] Besttimes = new float[4];
-        private int[] Bestscore = new int[4];
-        private string[] Bestnames = new string[4];
+    public float Finaltime;
+    public int Finalscore;
+    public string FinalName;
+
+    private float[] Besttimes = new float[5] ;
+        private int[] Bestscore = new int[5];
+        private string[] Bestnames = new string[5];
 
 
 
 
     private void Awake()
         {
-            if (Masterfile == null) { Masterfile = this; } else if (Masterfile != null) { Destroy(this); }
+        
+        if (Masterfile == null) { Masterfile = this; } else if (Masterfile != null) { Destroy(this); }
         }
 
 
@@ -37,6 +38,8 @@ public class EventManager : MonoBehaviour
         Bestnames[c] = FinalName;
         Bestscore[c] = Finalscore;
         Besttimes[c] = Finaltime;
+
+        Debug.Log("higscored pos "+c);
 
     }
 

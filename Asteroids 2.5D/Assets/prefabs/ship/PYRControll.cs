@@ -48,12 +48,14 @@ public class PYRControll : MonoBehaviour
 
 
     public GameObject instantiation;
+    private float timeini;
 
 
 
     void Start()
 
     {
+        timeini = Time.time;
         beepplayer = GetComponent<AudioSource>();
         enginenoise =  engine.GetComponent<AudioSource>() ;
 
@@ -233,7 +235,9 @@ public class PYRControll : MonoBehaviour
             if (HP <= 0)
                 
             {
-                EventManager.Masterfile.Finaltime = Time.time;
+             
+
+                EventManager.Masterfile.Finaltime = Time.time - timeini;
                 EventManager.Masterfile.newhigscore();
                 SceneManager.LoadScene("GameOverScene");
             }
