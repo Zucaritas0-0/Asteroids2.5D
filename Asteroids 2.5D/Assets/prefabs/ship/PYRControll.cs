@@ -28,6 +28,8 @@ public class PYRControll : MonoBehaviour
 
     public Vector3 worldPosition;
 
+    private bool ControllerOption;
+
     public Plane plane = new Plane(Vector3.up, 10);
 
     public float distance;
@@ -77,6 +79,8 @@ public class PYRControll : MonoBehaviour
         if (inspace == false)
         {
 
+
+
             if (Input.GetKey(KeyCode.Mouse0))
             {
                 
@@ -97,86 +101,167 @@ public class PYRControll : MonoBehaviour
         else
         {
 
+            if (ControllerOption==false) {
 
 
-            if (Input.GetKey(KeyCode.Mouse0))
-            {
-               
-
-                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-                if (plane.Raycast(ray, out distance))
-                {
-                    worldPosition = ray.GetPoint(distance);
-                }
-
-                degrees = Mathf.Atan2(cam.transform.position.z-worldPosition.z, cam.transform.position.x- worldPosition.x) * Mathf.Rad2Deg;
-               
-                direction = new Vector3(transform.position.x - cockpit.transform.position.x,0,
-                                            transform.position.z - cockpit.transform.position.z).normalized * -1;
-
-       
-                if (degrees <= 135 && degrees >= 45)
+                if (Input.GetKey(KeyCode.Mouse0))
                 {
 
 
+                    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
-                    if (Time.time >= TmMos1 + cooldown) {
-                        shoot();
-                       
-                         }
-                    
-
-                }
-                if (degrees <= 180 && degrees > 135 || (degrees >= -180 && degrees < -135) )
-                {
-
-                    transform.Rotate(Vector3.up,+rotatonSPD);
-
-                }
-                if (degrees > -45 && degrees < 45)
-                {
-
-                    transform.Rotate(Vector3.up, -rotatonSPD);
-
-                }
-                if (degrees >= -135 && degrees <= -45)
-                {
-                   
-                      
-                    
-                    accel+=600f;
-                    rigbody.AddForce(direction * 5);
-
-                    if (accel >= maxmoveSDP)
+                    if (plane.Raycast(ray, out distance))
                     {
-                        
-                        accel = maxmoveSDP;
+                        worldPosition = ray.GetPoint(distance);
+                    }
+
+                    degrees = Mathf.Atan2(cam.transform.position.z - worldPosition.z, cam.transform.position.x - worldPosition.x) * Mathf.Rad2Deg;
+
+                    direction = new Vector3(transform.position.x - cockpit.transform.position.x, 0,
+                                                transform.position.z - cockpit.transform.position.z).normalized * -1;
+
+
+                    if (degrees <= 135 && degrees >= 45)
+                    {
+
+
+
+                        if (Time.time >= TmMos1 + cooldown)
+                        {
+                            shoot();
+
+                        }
+
+
+                    }
+                    if (degrees <= 180 && degrees > 135 || (degrees >= -180 && degrees < -135))
+                    {
+
+                        transform.Rotate(Vector3.up, +rotatonSPD);
+
+                    }
+                    if (degrees > -45 && degrees < 45)
+                    {
+
+                        transform.Rotate(Vector3.up, -rotatonSPD);
+
+                    }
+                    if (degrees >= -135 && degrees <= -45)
+                    {
+
+
+
+                        accel += 600f;
+                        rigbody.AddForce(direction * 5);
+
+                        if (accel >= maxmoveSDP)
+                        {
+
+                            accel = maxmoveSDP;
+
+                        }
+
+                        if (activemovement == false)
+                        {
+                            activemovement = true;
+                            enginenoise.loop = true;
+                            enginenoise.Play();
+
+                        }
+
+
+
+                        rigbody.AddForce(direction * accel * 10);
+
 
                     }
 
-                    if(activemovement==false){
-                        activemovement = true;
-                        enginenoise.loop = true;
-                        enginenoise.Play();
 
-                    }
+                    // enginenoise.Stop();
+                    //enginenoise.loop = false;
 
 
 
-                    rigbody.AddForce( direction* accel* 10 ) ;
 
-                    
                 }
-               
 
-                // enginenoise.Stop();
-                //enginenoise.loop = false;
+
+
+            } else {
+
+
+          
+
+                    if (Input.GetKey(KeyCode.Space))
+                    {
+
+
+
+                        if (Time.time >= TmMos1 + cooldown)
+                        {
+                            shoot();
+
+                        }
+
+
+                    }
+                    if (Input.GetKey(KeyCode.D))
+                    {
+
+                        transform.Rotate(Vector3.up, +rotatonSPD);
+
+                    }
+                    if (Input.GetKey(KeyCode.A))
+                    {
+
+                        transform.Rotate(Vector3.up, -rotatonSPD);
+
+                    }
+                    if (Input.GetKey(KeyCode.W))
+                    {
+
+
+
+                        accel += 600f;
+                        rigbody.AddForce(direction * 5);
+
+                        if (accel >= maxmoveSDP)
+                        {
+
+                            accel = maxmoveSDP;
+
+                        }
+
+                        if (activemovement == false)
+                        {
+                            activemovement = true;
+                            enginenoise.loop = true;
+                            enginenoise.Play();
+
+                        }
+
+
+
+                        rigbody.AddForce(direction * accel * 10);
+
+
+                    }
+
+
+                    // enginenoise.Stop();
+                    //enginenoise.loop = false;
+
+
+
+
+                
 
 
 
 
             }
+
+            
             Playbzz();
 
 
