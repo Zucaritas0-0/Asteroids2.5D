@@ -28,7 +28,7 @@ public class PYRControll : MonoBehaviour
 
     public Vector3 worldPosition;
 
-    private bool ControllerOption;
+    private bool ControllerOption = true;
 
     public Plane plane = new Plane(Vector3.up, 10);
 
@@ -101,7 +101,13 @@ public class PYRControll : MonoBehaviour
         else
         {
 
+
+            direction = new Vector3(transform.position.x - cockpit.transform.position.x, 0,
+             transform.position.z - cockpit.transform.position.z).normalized * -1;
+
             if (ControllerOption==false) {
+
+
 
 
                 if (Input.GetKey(KeyCode.Mouse0))
@@ -117,8 +123,7 @@ public class PYRControll : MonoBehaviour
 
                     degrees = Mathf.Atan2(cam.transform.position.z - worldPosition.z, cam.transform.position.x - worldPosition.x) * Mathf.Rad2Deg;
 
-                    direction = new Vector3(transform.position.x - cockpit.transform.position.x, 0,
-                                                transform.position.z - cockpit.transform.position.z).normalized * -1;
+ 
 
 
                     if (degrees <= 135 && degrees >= 45)
