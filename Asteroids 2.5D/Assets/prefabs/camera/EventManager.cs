@@ -12,41 +12,68 @@ public class EventManager : MonoBehaviour
 
     public float Finaltime;
     public int Finalscore;
-    public string FinalName;
+   
+    //public string FinalName;
 
-    private float[] Besttimes = new float[5] ;
-        private int[] Bestscore = new int[5];
-        private string[] Bestnames = new string[5];
+    private float[] Besttimes = new float[5];
+    private int[] Bestscore = new int[5];
+    public bool yayhigscore=false;
+
+ 
+    //   private string[] Bestnames = new string[5];
 
 
 
 
     private void Awake()
         {
-        
-        if (Masterfile == null) { Masterfile = this; } else if (Masterfile != null) { Destroy(this); }
+    
+        if (Masterfile == null) { Masterfile = this;
+
+
+            int i = 0;
+            for (i = 0; i < Bestscore.Length; i++)
+            { Bestscore[i] = 0; Besttimes[i] = 0;  }
+
+
+
+        }
+        else if (Masterfile != null) { Destroy(this); }
         }
 
 
     public void newhigscore()
     {
-        int i=0, c = 0; 
+        int i = 0, c = 0; ;
 
-        for (i=0;i<=Bestscore.Length ;i++) {
-            if (Finalscore > Bestscore[i]|| Finaltime > Besttimes[i]) { c = i;i = 8; SceneManager.LoadScene("HigScoreScene"); }
+        for (i=0;i<Bestscore.Length ;i++) {
+            if (Finalscore > Bestscore[i]) {
+              //  c = i;
+
+                for (c = Bestscore.Length-1; c > i; c++)
+                {
+                    Bestscore[c] = Bestscore[c+1];
+                    Besttimes[c] = Bestscore[c+1];
+
+                }
+                Bestscore[i] = Finalscore;
+                Besttimes[i] = Finaltime;
+                yayhigscore = true;
+             
+            
+                i = 10000;
+             }
         }
-        Bestnames[c] = FinalName;
-        Bestscore[c] = Finalscore;
-        Besttimes[c] = Finaltime;
+       // Bestnames[c] = FinalName;
 
-        Debug.Log("higscored pos "+c);
+
+        
 
     }
 
-    public string getbestname(int pos){ return (Bestnames[pos]); }
-    public float getbestscore(int pos) { return (Bestscore[pos]); }
-    public int getbesttime(int pos) { return (Bestscore[pos]); }
-
+ //   public string getbestname(int pos){ return (Bestnames[pos]); }
+    public int getbestscore(int pos) { return (Bestscore[pos]); }
+    public float getbesttime(int pos) { return (Besttimes[pos]); }
     #endregion
 
 }

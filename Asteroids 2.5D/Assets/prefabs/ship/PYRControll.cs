@@ -329,7 +329,10 @@ public class PYRControll : MonoBehaviour
 
                 EventManager.Masterfile.Finaltime = Time.time - timeini;
                 EventManager.Masterfile.newhigscore();
-                SceneManager.LoadScene("GameOverScene");
+                if (EventManager.Masterfile.yayhigscore) {
+                    SceneManager.LoadScene("HigScoreScene"); } 
+                else { SceneManager.LoadScene("GameOverScene");}
+                
             }
         }
     }
