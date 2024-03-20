@@ -269,9 +269,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 2
+  m_MaxValue: 3
   m_WholeNumbers: 1
-  m_Value: 2
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -773,6 +773,10 @@ PrefabInstance:
       propertyPath: rotatonSPD
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -4896646503418313895, guid: 8eda59b08352afb4790cedb80fa72e7c, type: 3}
+      propertyPath: barraDeVida
+      value: 
+      objectReference: {fileID: 404014293}
     - target: {fileID: 659043791705125129, guid: 8eda59b08352afb4790cedb80fa72e7c, type: 3}
       propertyPath: m_Convex
       value: 1

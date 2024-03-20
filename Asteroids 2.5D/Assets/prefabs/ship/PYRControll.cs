@@ -69,11 +69,15 @@ public class PYRControll : MonoBehaviour
         enginenoise =  engine.GetComponent<AudioSource>() ;
         materialrender = GetComponentInChildren<MeshRenderer>();
 
+
+       
+
+
    cam = Camera.main;
         rigbody = GetComponent<Rigidbody>();
-        
 
 
+     
 
 
     }
@@ -81,7 +85,7 @@ public class PYRControll : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        barraDeVida.CambiarVidaActual(HP);
         // control de la nave en planeta
 
         if (inspace == false)
@@ -346,7 +350,7 @@ public class PYRControll : MonoBehaviour
                     SceneManager.LoadScene("HigScoreScene"); } 
                 else { SceneManager.LoadScene("GameOverScene");}
 
-                barraDeVida.CambiarVidaActual(HP);
+              //  barraDeVida.CambiarVidaActual(HP);
 
             }
 

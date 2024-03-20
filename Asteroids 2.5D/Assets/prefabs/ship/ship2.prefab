@@ -106,11 +106,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 3
+  invultime: 0
   rotatonSPD: 4
   maxmoveSDP: 1000
   accel: 0
   rigbody: {fileID: 0}
   cockpit: {fileID: 2652193921574154805}
+  materialrender: {fileID: 0}
   TmMos1: 0
   TmMos2: 0
   mousepost: {x: 0, y: 0, z: 0}
@@ -127,6 +129,7 @@ MonoBehaviour:
   beepplayer: {fileID: 0}
   enginenoise: {fileID: 0}
   instantiation: {fileID: 4809476352467779156, guid: d8f505663a855064eb3415eb64f8cbb4, type: 3}
+  barraDeVida: {fileID: 6905694316193381969, guid: c207e7c85aadefd48a05c7ecfaf57568, type: 3}
 --- !u!64 &659043791705125129
 MeshCollider:
   m_ObjectHideFlags: 0
