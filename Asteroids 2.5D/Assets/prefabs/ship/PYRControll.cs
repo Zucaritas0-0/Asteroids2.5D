@@ -8,6 +8,8 @@ public class PYRControll : MonoBehaviour
 {
     public int HP;
 
+    public float invultime;
+
     public float rotatonSPD;
     public float maxmoveSDP;
 
@@ -15,6 +17,7 @@ public class PYRControll : MonoBehaviour
 
     public Rigidbody rigbody;
     public Transform cockpit;
+    public MeshRenderer materialrender;
 
     public float TmMos1, TmMos2=0;
 
@@ -60,8 +63,9 @@ public class PYRControll : MonoBehaviour
         timeini = Time.time;
         beepplayer = GetComponent<AudioSource>();
         enginenoise =  engine.GetComponent<AudioSource>() ;
+        materialrender = GetComponentInChildren<MeshRenderer>();
 
-    cam = Camera.main;
+   cam = Camera.main;
         rigbody = GetComponent<Rigidbody>();
         
 
@@ -321,6 +325,8 @@ public class PYRControll : MonoBehaviour
     {
         if (collide.GetContact(0).otherCollider.tag != "PlayProyect")
         {
+            materialrender.materials[0] = null;
+
             HP -= collide.GetContact(0).otherCollider.GetComponent<AsteroidTOPControll>().DMG;
             if (HP <= 0)
                 
@@ -337,6 +343,9 @@ public class PYRControll : MonoBehaviour
                 else { SceneManager.LoadScene("GameOverScene");}
 
             }
+
+      
+
         }
     }
 
