@@ -15,8 +15,8 @@ public class EventManager : MonoBehaviour
    
     //public string FinalName;
 
-    private float[] Besttimes = new float[5];
-    private int[] Bestscore = new int[5];
+    private static float[] Besttimes = new float[5];
+    private static int[] Bestscore = new int[5];
     public bool yayhigscore=false;
 
  
