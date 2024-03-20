@@ -56,6 +56,10 @@ public class PYRControll : MonoBehaviour
     private float timeini;
 
 
+    public barradevida barraDeVida;
+
+
+
 
     void Start()
 
@@ -341,6 +345,8 @@ public class PYRControll : MonoBehaviour
                 if (EventManager.Masterfile.yayhigscore) {
                     SceneManager.LoadScene("HigScoreScene"); } 
                 else { SceneManager.LoadScene("GameOverScene");}
+
+                barraDeVida.CambiarVidaActual(HP);
 
             }
 
