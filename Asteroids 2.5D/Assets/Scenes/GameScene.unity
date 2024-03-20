@@ -737,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 807361118574110883, guid: 536a49c005c66c943929548d2dc16994, type: 3}
       propertyPath: respawnTime
-      value: 0.8
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 807361118574110883, guid: 536a49c005c66c943929548d2dc16994, type: 3}
       propertyPath: objeto.Array.data[0]
