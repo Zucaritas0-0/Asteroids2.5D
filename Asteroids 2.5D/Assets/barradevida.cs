@@ -20,6 +20,7 @@ public class barradevida : MonoBehaviour
     public void CambiarVidaActual(float cantidadVida)
     {
         slider.value = cantidadVida;
+  
     }
 
     public void InicializarBarraDeVida(float cantidadVida)

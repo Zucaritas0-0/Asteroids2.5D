@@ -45,7 +45,7 @@ public class Generation : MonoBehaviour{
             }
     IEnumerator asteroidWave(){
         while(true){
-            yield return new WaitForSeconds(respawnTime);
+            yield return new WaitForSeconds(respawnTime - (Time.time /10000000));
             spawnEnemy();
         }
     }

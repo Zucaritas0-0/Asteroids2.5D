@@ -56,7 +56,7 @@ public class EventManager : MonoBehaviour
                 for (c = Bestscore.Length-1; c > i; c--)
                 {
                     Bestscore[c] = Bestscore[c-1];
-                    Besttimes[c] = Bestscore[c-1];
+                    Besttimes[c] = Besttimes[c-1];
 
                 }
                 Bestscore[i] = Finalscore;
