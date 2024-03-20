@@ -30,10 +30,11 @@ public class EventManager : MonoBehaviour
     
         if (Masterfile == null) { Masterfile = this;
 
+            //Debug.Log("runin for the first time");
 
-            int i = 0;
-            for (i = 0; i < Bestscore.Length; i++)
-            { Bestscore[i] = 0; Besttimes[i] = 0;  }
+          //  int i = 0;
+           // for (i = 0; i < Bestscore.Length; i++)
+           // { Bestscore[i] = 0; Besttimes[i] = 0;  }
 
 
 
@@ -47,13 +48,15 @@ public class EventManager : MonoBehaviour
         int i = 0, c = 0; ;
 
         for (i=0;i<Bestscore.Length ;i++) {
-            if (Finalscore > Bestscore[i]) {
-              //  c = i;
 
-                for (c = Bestscore.Length-1; c > i; c++)
+           
+
+            if (Finalscore > Bestscore[i]) {
+
+                for (c = Bestscore.Length-1; c > i; c--)
                 {
-                    Bestscore[c] = Bestscore[c+1];
-                    Besttimes[c] = Bestscore[c+1];
+                    Bestscore[c] = Bestscore[c-1];
+                    Besttimes[c] = Bestscore[c-1];
 
                 }
                 Bestscore[i] = Finalscore;
